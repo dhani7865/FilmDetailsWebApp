@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+<head>
+<!--- Creating a heading for the DELETE form to delete film in the application -->
+<h2>DELETE A FILM</h2>
+<title>Form to Delete a film</title>
+<link rel="stylesheet" href="css/styles.css" type="text/css" />
+</head>
+<body>
+	<!-- 	<form action="ControlDeleteFilm" method="POST"> -->
+	<form action="/com.democo.jersey.film/rest/films/delete" method="post">
+		<label for="id">ID</label> <input name="id" /> <br /> <input
+			type="submit" value="Submit" />
+	</form>
+</body>
+</html>

@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<definitions xmlns="http://schemas.xmlsoap.org/wsdl/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tns="http://webservices.daehosting.com/film" xmlns:xs="http://www.w3.org/2001/XMLSchema" name="FilmDetails" targetNamespace="http://webservices.daehosting.com/film">
+	<types>
+		<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema" targetNamespace="http://webservices.daehosting.com/film">
+
+
+			<xsd:complexType name="FilmsList">
+			</xsd:complexType>
+			<xsd:element name="FilmsList" type="xsd:string">
+			</xsd:element>
+			<xsd:element name="FilmsListResponse" type="xsd:string">
+			</xsd:element>
+			<xsd:element name="FilmsListXML" type="xsd:string">
+			</xsd:element>
+			
+			<xsd:element name="FilmsListXMLResponse" type="xsd:string">
+			</xsd:element>
+			<xsd:element name="FilmsListSOAP" type="xsd:string">
+			</xsd:element>
+			<xsd:element name="FilmsListJSON" type="xsd:string"/>
+			<xsd:element name="FilmsListJSONResponse" type="xsd:string"/>
+			<xsd:element name="FilmsListString" type="xsd:string"/>
+			<xsd:element name="FilmsListStringResponse" type="xsd:string"/>
+		</xsd:schema>
+	</types>
+	<message name="FilmsListSoapRequest">
+		<part element="tns:FilmsList" name="parameters"/>
+	</message>
+	<message name="FilmsListSoapResponse">
+		<part element="tns:FilmsListResponse" name="parameters"/>
+	</message>
+	<message name="FilmsXMLSoapRequest">
+		<part element="tns:FilmsListXML" name="parameters"/>
+	</message>
+	<message name="FilmsListXMLSoapResponse">
+		<part name="NewPart" type="xs:string"/>
+	</message>
+	<message name="FilmsXMLSoapResponse">
+		<part element="tns:FilmsListXMLResponse" name="paramters"/>
+	</message>
+	<message name="FilmsJSONSoapRequest">
+		<part element="tns:FilmsListJSON" name="parameters"/>
+	</message>
+	<message name="FilmsJSONSoapResponse">
+		<part element="tns:FilmsListJSONResponse" name="parameters"/>
+	</message>
+	<message name="FilsmStringSoapRequest">
+		<part element="tns:FilmsListString" name="parameters"/>
+	</message>
+	<message name="FilmsStringSoapResponse">
+		<part element="tns:FilmsListStringResponse" name="parameters"/>
+	</message>
+	<portType name="FilmSoapType">
+		<operation name="FilmsList">
+			<documentation>Converts a Celcius Temperature to a Fahrenheit value
+			</documentation>
+			<input message="tns:FilmsListSoapRequest"/>
+			<output message="tns:FilmsListSoapResponse"/>
+		</operation>
+		<operation name="FilmsXML">
+			<documentation>Converts a Fahrenheit Temperature to a Celcius value
+			</documentation>
+			<input message="tns:FilmsXMLSoapRequest"/>
+			<output message="tns:FilmsXMLSoapResponse"/>
+		</operation>
+		<operation name="FilmsJSON">
+			<documentation>Windchill temperature calculated with the formula of
+				Steadman
+			</documentation>
+			<input message="tns:FilmsJSONSoapRequest"/>
+			<output message="tns:FilmsJSONSoapResponse"/>
+		</operation>
+		<operation name="FilmsString">
+			<documentation>Windchill temperature calculated with the formula of
+				Steadman
+			</documentation>
+			<input message="tns:FilsmStringSoapRequest"/>
+			<output message="tns:FilmsStringSoapResponse"/>
+		</operation>
+	</portType>
+	<binding name="FilmSoapBinding" type="tns:FilmSoapType">
+		<soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+		<operation name="FilmsList">
+			<soap:operation soapAction="http://webservices.daehosting.com/film/FilmsList"/>
+			<input>
+				<soap:body use="literal"/>
+			</input>
+			<output>
+				<soap:body use="literal"/>
+			</output>
+		</operation>
+		<operation name="FilmsXML">
+			<soap:operation soapAction="http://webservices.daehosting.com/film/FilmsXML"/>
+			<input>
+				<soap:body use="literal"/>
+			</input>
+			<output>
+				<soap:body use="literal"/>
+			</output>
+		</operation>
+		<operation name="FilmsJSON">
+			<soap:operation soapAction="http://webservices.daehosting.com/film/FilmsJSON"/>
+			<input>
+				<soap:body use="literal"/>
+			</input>
+			<output>
+				<soap:body use="literal"/>
+			</output>
+		</operation>
+		<operation name="FilmsString">
+			<soap:operation soapAction="http://webservices.daehosting.com/film/FilmsString"/>
+			<input>
+				<soap:body use="literal"/>
+			</input>
+			<output>
+				<soap:body use="literal"/>
+			</output>
+		</operation>
+	</binding>
+	<service name="Film">
+		<documentation>Visual DataFlex Web Service to convert temperature
+			values between Celcius and Fahrenheit
+		</documentation>
+		<port binding="tns:FilmSoapBinding" name="FilmSoap">
+			<soap:address location="http://localhost:8080/TempCovertServer/services/FilmSoap"/>
+		</port>
+	</service>
+</definitions>

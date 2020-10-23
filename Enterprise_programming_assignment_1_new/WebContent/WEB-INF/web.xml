@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<web-app xmlns="http://xmlns.jcp.org/xml/ns/javaee" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd"
+	version="3.1">
+
+	<servlet>
+		<servlet-name>Find film with Given ID</servlet-name>
+		<servlet-class>Controller.ControlGetId</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>Find film with Given ID</servlet-name>
+		<url-pattern>/find-film-by-id</url-pattern>
+	</servlet-mapping>
+
+	<servlet>
+		<servlet-name>Find film with Given title</servlet-name>
+		<servlet-class>Controller.ControlGetFilm</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>Find film with Given title</servlet-name>
+		<url-pattern>/find-film-by-title</url-pattern>
+	</servlet-mapping>
+
+	<servlet>
+		<servlet-name>Insert film</servlet-name>
+		<servlet-class>Controller.ControlInsertFilm</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>Insert film</servlet-name>
+		<url-pattern>/insert-film</url-pattern>
+	</servlet-mapping>
+
+	<servlet>
+		<servlet-name>Update film</servlet-name>
+		<servlet-class>Controller.ControlUpdateFilm</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>Update film</servlet-name>
+		<url-pattern>/Update-film</url-pattern>
+	</servlet-mapping>
+
+	<servlet>
+		<servlet-name>Delete film</servlet-name>
+		<servlet-class>Controller.ControlDeleteFilm</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>Delete film</servlet-name>
+		<url-pattern>/Delete-film</url-pattern>
+	</servlet-mapping>
+
+
+	<welcome-file-list>
+		<welcome-file>index.html</welcome-file>
+		<welcome-file>index.jsp</welcome-file>
+	</welcome-file-list>
+</web-app>

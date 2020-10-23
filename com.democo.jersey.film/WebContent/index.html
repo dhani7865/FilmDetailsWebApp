@@ -1,0 +1,48 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title>FILMS</title>
+<link rel="stylesheet" href="css/styles.css" type="text/css" />
+</head>
+
+<!--- Url to convert the data to xml format. http://localhost:8080/Control?format=xml --->
+<!--- Url to convert the data to json format. http://localhost:8080/Control?format=json --->
+<!--- Url to convert the data to json format. http://localhost:8080/Control?format=string --->
+
+<!--- Creating a form -->
+<body>
+	<!--- Creating a heading for the film application -->
+	<div align="center">
+		<table border="5">
+			<tr>
+				<th class="title">REST HTTP CALLS!</th>
+			</tr>
+		</table>
+
+		<h2>CRUD METHODS</h2>
+		<!--- Creating a form to create new film -->
+		<table>
+			<tr>
+				<h2>INSERT NEW FILM TO THE DATABASE</h2>
+				<td><a href='create_film.html'>Create a new film</a></td>
+			</tr>
+		</table>
+
+		<!--- Update a film -->
+		<table>
+			<tr>
+				<h2>UPDATE FILM IN THE DATABASE</h2>
+				<td><a href='update_film.html'>Update a film</a></td>
+			</tr>
+		</table>
+
+		<!--- Delete a film -->
+		<table>
+			<tr>
+				<h2>DELETE FILM IN THE DATABASE</h2>
+				<td><a href='delete_film.html'>Delete a film</a></td>
+			</tr>
+		</table>
+</body>
+</html>

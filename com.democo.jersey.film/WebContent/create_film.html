@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+<!--- Creating a heading for the form to create new film in the application -->
+<h2>INSERT A FILM</h2>
+<title>Form to create a new film</title>
+<link rel="stylesheet" href="css/styles.css" type="text/css" />
+</head>
+<body>
+	<!-- 	<form actsion="ControlInsertFilm" method="POST"> -->
+	<form action="/com.democo.jersey.film/rest/films" method="POST">
+		<label for="id">ID</label> <input name="id" value='"getId()"' /> <br />
+		<label for="title">title</label> <input name="title"
+			value='"getTitle()"' /> <br /> <label for="year">year</label> <input
+			name="year" value='"getYear()"' /> <br /> <label for="director">director</label>
+		<input name="director" value='"getDirector()"' /> <br /> <label
+			for="stars">stars</label> <input name="stars" value='"getStars()"' />
+		<br /> <label for="review">review</label> <input name="review"
+			value='"get()"' /> <br /> <input type="submit" value="Submit" />
+	</form>
+</body>
+</html>

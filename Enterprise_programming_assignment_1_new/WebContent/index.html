@@ -1,0 +1,102 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title>FILMS</title>
+<link rel="stylesheet" href="css/styles.css" type="text/css" />
+<script src="scripts/jquery.js"></script>
+<script src="scripts/ajax-dao.js" type="text/javascript"></script>
+<script src="scripts/ajax-data-tables.js" type="text/javascript"></script>
+<script src="scripts/ajax-param-string.js" type="text/javascript"></script>
+</head>
+
+<!--- Url to convert the data to xml format. http://localhost:8080/Control?format=xml --->
+<!--- Url to convert the data to json format. http://localhost:8080/Control?format=json --->
+<!--- Url to convert the data to json format. http://localhost:8080/Control?format=string --->
+
+<!--- Creating a form -->
+<body>
+	<!--- Creating a heading for the film application -->
+	<div align="center">
+		<table border="5">
+			<tr>
+				<th class="title">DISPLAYING FILM DETAILS!</th>
+			</tr>
+		</table>
+
+
+		<!--- Calling the available servlets and calling the control class  -->
+		<table>
+			<tr>
+				<h2>Available Servlets</h2>
+			</tr>
+			<tr>
+				<td><a href='/Enterprise_programming_assignment_1_new/Control'>FilmList</a></td>
+			</tr>
+		</table>
+		<p />
+
+		<h2>TESTING THE CRUD METHODS FROM THE FILMDAO</h2>
+		<!--- Creating a form to create new film -->
+		<table>
+			<tr>
+				<td><a href='create_film.html'>Create a new film</a></td>
+			</tr>
+		</table>
+
+		<!--- Update a film -->
+		<table>
+			<tr>
+				<td><a href='update_film.html'>Update a film</a></td>
+			</tr>
+		</table>
+
+		<!--- Delete a film -->
+		<table>
+			<tr>
+				<td><a href='delete_film.html'>Delete a film</a></td>
+			</tr>
+		</table>
+
+
+		<br><h2> AJAX APPLICATION </h2></br>
+		<!--- Creating a form for the xml format -->
+		<fieldset>
+			<legend>Film: XML</legend>
+			<form action="#">
+				<label for="xmlFilmsTable">Film ID:</label> <input type="text"
+					id="xmlFilmsTable" /> <input type="button"
+					value="Show films Table" id="btnXmlFilmsTable" />
+			</form>
+			<p />
+			<div id="xml-films-table"></div>
+		</fieldset>
+		<p />
+
+		<!--- Creating a form for the json format -->
+		<fieldset>
+			<legend>Film: JSON</legend>
+			<form action="#">
+				<label for="jsonFilmsTable">Film ID:</label> <input type="text"
+					id="jsonFilmsTable" /> <input type="button"
+					value="Show films Table" id="btnJsonFilmsTable" />
+			</form>
+			<p />
+			<div id="json-films-table"></div>
+		</fieldset>
+		<p />
+
+		<!--- Creating a form for the string format -->
+		<fieldset>
+			<legend>Film: String</legend>
+			<form action="#">
+				<label for="stringFilmsTable">Film ID:</label> <input type="text"
+					id="stringFilmsTable" /> <input type="button"
+					value="Show films Table" id="btnStringFilmsTable" />
+			</form>
+			<p />
+			<div id="string-films-table"></div>
+		</fieldset>
+		<p />
+</body>
+</html>

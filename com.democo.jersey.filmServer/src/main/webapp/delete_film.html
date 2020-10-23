@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+<head>
+<!--- Creating a heading for the DELETE form to delete film in the application -->
+<h2>DELETE A FILM</h2>
+<title>Form to Delete a film</title>
+<link rel="stylesheet" href="css/styles.css" type="text/css" />
+</head>
+<body>
+	<!-- 	Creating form to delete existing film in the database using an id -->
+	<form action="/rest/films/delete" method="post">
+		<label for="id">ID</label> <input name="id" /> <br /> <input
+			type="submit" value="Submit" />
+	</form>
+</body>
+</html>

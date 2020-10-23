@@ -1,0 +1,26 @@
+<!-- Use this file to deploy some handlers/chains and services      -->
+<!-- Two ways to do this:                                           -->
+<!--   java org.apache.axis.client.AdminClient deploy.wsdd          -->
+<!--      after the axis server is running                          -->
+<!-- or                                                             -->
+<!--   java org.apache.axis.utils.Admin client|server deploy.wsdd   -->
+<!--      from the same directory that the Axis engine runs         -->
+
+<deployment
+    xmlns="http://xml.apache.org/axis/wsdd/"
+    xmlns:java="http://xml.apache.org/axis/wsdd/providers/java">
+
+  <!-- Services from Film WSDL service -->
+
+  <service name="FilmSoap" provider="java:RPC" style="document" use="literal">
+      <parameter name="wsdlTargetNamespace" value="http://webservices.daehosting.com/film"/>
+      <parameter name="wsdlServiceElement" value="Film"/>
+      <parameter name="schemaUnqualified" value="http://webservices.daehosting.com/film"/>
+      <parameter name="wsdlServicePort" value="FilmSoap"/>
+      <parameter name="className" value="com.daehosting.webservices.film.FilmSoapBindingSkeleton"/>
+      <parameter name="wsdlPortType" value="FilmSoapType"/>
+      <parameter name="typeMappingVersion" value="1.2"/>
+      <parameter name="allowedMethods" value="*"/>
+
+  </service>
+</deployment>
